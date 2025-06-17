@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Flicker animation for dramatic text */
 @keyframes flicker {
   0%, 18%, 22%, 25%, 53%, 57%, 100% {
     text-shadow: 0 0 4px #ff0000, 0 0 11px #ff0000;
@@ -29,6 +31,7 @@ body {
   animation: flicker 3s infinite;
 }
 
+/* Header */
 header {
   text-align: center;
   padding: 60px 20px;
@@ -49,30 +52,43 @@ header .tagline {
   color: #bbb;
 }
 
+/* Promo Section */
 .promo {
   display: flex;
   align-items: center;
   justify-content: center;
+      background: rgba(255, 0, 0, 0.2);
   min-height: 70vh;
-  background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
   position: relative;
   overflow: hidden;
-  background-size: cover;
+  /* Remove background from CSS now as it's handled via HTML image */
+}
+
+/* The background image inserted in HTML */
+.promo-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   animation: parallax 20s linear infinite alternate;
 }
 
+/* Parallax background animation */
 @keyframes parallax {
   0% {
     transform: scale(1) translateX(0);
   }
   50% {
-    transform: scale(1.07) translateX(0px);
+    transform: scale(1.05) translateX(0px);
   }
   100% {
     transform: scale(1) translateX(0);
   }
 }
 
+/* Dark overlay for the promo section */
 .promo::before {
   content: "";
   position: absolute;
@@ -80,9 +96,9 @@ header .tagline {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.75);
 }
 
+/* Content styling inside the promo section */
 .promo .content {
   position: relative;
   text-align: center;
@@ -101,9 +117,12 @@ header .tagline {
 .promo .content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #d4d4d4;
+  color: #ffffff;
+  border: 1px solid #ff0000;
+  background: rgba(97, 45, 45, 0.7);
 }
 
+/* Call-to-Action Button */
 .cta-button {
   background-color: #ff0000;
   color: #fff;
@@ -123,11 +142,10 @@ header .tagline {
   transform: scale(1.05);
 }
 
+/* Countdown Timer */
 .countdown {
   margin-top: 20px;
   padding: 15px;
-  background: rgba(255, 0, 0, 0.2);
-  border: 1px solid #ff0000;
   display: flexbox;
   border-radius: 5px;
 }
@@ -144,6 +162,7 @@ header .tagline {
   font-weight: bold;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -153,6 +172,7 @@ footer {
   color: #888;
 }
 
+/* Responsive Design - Adjustments for Mobile Devices */
 @media (max-width: 768px) {
   header {
     padding: 40px 10px;
