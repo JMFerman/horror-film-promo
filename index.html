@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shadow of Midnight</title>
+  <title>My Bloody Summer</title>
   <link href="https://fonts.googleapis.com/css?family=Creepster&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1 class="flicker">SHADOW OF MIDNIGHT</h1>
+    <h1 class="flicker">My Bloody Summer</h1>
     <p class="tagline">A Horror Film That Haunts Your Dreams</p>
   </header>
 
@@ -17,13 +17,13 @@
     <div class="content">
       <h2 class="flicker-slow">The Darkness Awakens</h2>
       <p>
-        In a world of relentless fear, one film will shatter the calm of the nights. Dare to witness the untold story of supernatural terror and retro mystery.
+        Jose returns to the idyllic lake town of Chest Creek for what should be a quiet summer, he discovers the place he once called home is haunted not just by local legends, but by someone—intent on vengeance. A string of brutal murders stirs up memories of a tragedy long buried, and the survivors of a forgotten summer massacre find themselves hunted once more. As Jose unravels the bloody truth, he must confront his own connection to the killer before the sun sets on everyone he loves.
       </p>
       <a href="#" class="cta-button">Watch the Trailer</a>
       <div id="countdown" class="countdown">
         <h3>Trailer Release In:</h3>
         <div class="timer">
-          <span id="days">00</span> Days 
+          <span id="days">999</span> Days 
           <span id="hours">00</span> Hours 
           <span id="minutes">00</span> Minutes 
           <span id="seconds">00</span> Seconds
@@ -35,5 +35,34 @@
   <footer>
     <p>&copy; 2025 Shadow Studios. All rights reserved.</p>
   </footer>
+  
+<script>
+    // Set the date we're counting down to (e.g., December 31, 2025 23:59:59)
+    const countdownDate = new Date("Dec 31, 2025 23:59:59").getTime();
+
+    // Update the countdown every 1 second
+    const countdownfunction = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+      
+      // Time calculations for days, hours, minutes and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Output the result in the elements with corresponding IDs
+      document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+      document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+      // When the countdown is over, change the content
+      if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("countdown").innerHTML = "<h3>The trailer is here... Enter if you dare!</h3>";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
