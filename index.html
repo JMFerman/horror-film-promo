@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Devil's Woods</title>
   <link href="https://fonts.googleapis.com/css?family=Creepster&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -14,9 +14,10 @@
   </header>
 
   <section class="promo">
-      <img src="20240326_000348568_iOS.jpg" width="412" height="392" alt="Eerie Horror Background" class="promo-bg">
+    <!-- Image file is assumed to be in the same directory as this HTML file -->
+    <img src="20240326_000348568_iOS.jpg" width="412" height="392" alt="Eerie Horror Background" class="promo-bg">
     <div class="content">
-        <p>
+      <p>
         Jose returns to the idyllic lake town of Chest Creek for what should be a quiet summer, he discovers the place he once called home is haunted not just by local legends, but by someone—intent on vengeance. A string of brutal murders stirs up memories of a tragedy long buried, and the survivors of a forgotten summer massacre find themselves hunted once more. As Jose unravels the bloody truth, he must confront his own connection to the killer before the sun sets on everyone he loves.
       </p>
       <h2 class="flicker-slow">The Darkness Awakens</h2>
@@ -37,12 +38,12 @@
     <p>&copy; 2025 Shadow Studios. All rights reserved.</p>
   </footer>
 
-<script>
-    // Set the date we're counting down to (e.g., December 31, 2025 23:59:59)
+  <script>
+    // Set the date we're counting down to (December 31, 2025 23:59:59)
     const countdownDate = new Date("Dec 31, 2025 23:59:59").getTime();
 
-    // Update the countdown every 1 second
-    const countdownfunction = setInterval(function() {
+    // Update the countdown every second
+    const countdownFunction = setInterval(function() {
       const now = new Date().getTime();
       const distance = countdownDate - now;
       
@@ -60,7 +61,7 @@
 
       // When the countdown is over, change the content
       if (distance < 0) {
-        clearInterval(countdownfunction);
+        clearInterval(countdownFunction);
         document.getElementById("countdown").innerHTML = "<h3>The trailer is here... Enter if you dare!</h3>";
       }
     }, 1000);
