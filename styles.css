@@ -57,11 +57,11 @@ header .tagline {
   display: flex;
   align-items: center;
   justify-content: center;
-      background: rgba(255, 0, 0, 0.2);
+  background: rgba(255, 0, 0, 0.2);
   min-height: 70vh;
   position: relative;
   overflow: hidden;
-  /* Remove background from CSS now as it's handled via HTML image */
+  /* Background image is handled in HTML, not via CSS */
 }
 
 /* The background image inserted in HTML */
